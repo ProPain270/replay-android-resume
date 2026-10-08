@@ -64,3 +64,18 @@ See [validation](VALIDATION.md) for results from this export.
 This is a development portfolio project. GB/GBC, GBA, and SNES have build lanes. N64 and GameCube library recognition does not imply playable runtime support. Physical foldable/controller qualification and signed production distribution remain separate milestones. No commercial ROMs, proprietary BIOS files, user library data, or release signing keys are included.
 
 See [licenses](licenses/README.md) for upstream terms. In particular, Snes9x has non-commercial restrictions. Original project code has no blanket license grant in this snapshot; third-party files retain their own notices.
+
+
+## Publication guard
+
+Requires Python 3. Install the pre-push guard separately in each clone; Git does not clone local hooks.
+
+```sh
+python3 tools/install_publication_guard.py
+python3 tools/test_public_export.py
+python3 tools/check_public_export.py
+```
+
+The guard checks every reachable commit's author and committer against matching GitHub noreply identities, scans historical file contents and commit messages for common disclosure patterns, and rejects generated/credential files, symlinks, submodules, and unreviewed binaries. Errors identify Git objects without printing suspicious values. The retained Gradle wrapper is allowed only at its reviewed SHA-256; provenance is recorded in `tools/public-export-policy.json`. Gradle distribution downloads also have pinned checksums.
+
+The installer preserves existing hooks and custom hook settings. CI runs the same checks against full history. These checks complement manual review; they are not an exhaustive privacy guarantee. CI checks occur after a push, so use the local hook to catch mistakes before upload. Intentional code contributions should use the contributor's public GitHub handle and corresponding noreply email.

@@ -18,3 +18,7 @@ work/
 *.log
 .DS_Store
 .idea/
+
+# Python check caches
+__pycache__/
+*.py[cod]

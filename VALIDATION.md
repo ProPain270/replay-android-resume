@@ -17,3 +17,8 @@ The device journeys exercise original diagnostic GB content with real SameBoy re
 Lint warnings concern newer dependency/tool versions and an attribute ignored below its supported API. Dependency updates require separate compatibility testing.
 
 Reproduce portable tests through GitHub Actions or the README's CMake commands. Use the README's Android build and device-journey commands for Android checks. `tools/verify_android_artifact.sh` verifies both ABI coverage and native/ZIP alignment. No signing keys, runtime user data, operational logs, or commercial ROMs are part of this source export.
+
+
+## Publication safeguards
+
+The publication guard's 10 synthetic-history tests pass, including author/committer fallback, secrets deleted from later commits, commit-message disclosures, generated files, private path/address patterns, symlinks, and changed reviewed-binary digests. Both the full public history and source exports pass the guard. Gradle wrapper digests match official release checksums and distribution digests are pinned.
