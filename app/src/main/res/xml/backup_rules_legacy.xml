@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Legacy Android backup is opt-in to client-side encrypted storage. -->
+    <include domain="file" path="library" requireFlags="clientSideEncryption" />
+    <include domain="file" path="saves" requireFlags="clientSideEncryption" />
+    <include domain="file" path="save-states" requireFlags="clientSideEncryption" />
+    <include domain="file" path="save-state-thumbnails" requireFlags="clientSideEncryption" />
+    <include domain="file" path="artwork" requireFlags="clientSideEncryption" />
+    <include domain="sharedpref" path="presentation-preferences.xml" requireFlags="clientSideEncryption" />
+</full-backup-content>

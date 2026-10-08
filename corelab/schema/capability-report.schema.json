@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/corelab/capability-report.schema.json",
+  "title": "CoreLab capability report",
+  "type": "object",
+  "required": ["schema_version", "run", "core", "content", "video", "audio", "input", "persistence", "thread_contract", "result"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run": {
+      "type": "object",
+      "required": ["profile", "host_build_id", "target_abi", "fixture_id", "fixture_sha256"],
+      "properties": {
+        "profile": {"type": "string"},
+        "host_build_id": {"type": "string"},
+        "target_abi": {"type": "string"},
+        "fixture_id": {"type": "string"},
+        "fixture_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "core": {
+      "type": "object",
+      "required": ["id", "library_name", "library_version", "artifact_sha256", "api_version", "need_fullpath", "status"],
+      "properties": {
+        "id": {"type": "string"},
+        "library_name": {"type": "string"},
+        "library_version": {"type": "string"},
+        "artifact_sha256": {"type": "string"},
+        "api_version": {"type": "integer"},
+        "need_fullpath": {"type": "boolean"},
+        "status": {"enum": ["passed", "failed", "blocked"]}
+      }
+    },
+    "content": {"$ref": "#/$defs/capability"},
+    "video": {"$ref": "#/$defs/capability"},
+    "audio": {"$ref": "#/$defs/capability"},
+    "input": {"$ref": "#/$defs/capability"},
+    "persistence": {
+      "type": "object",
+      "required": ["native_save", "save_state"],
+      "properties": {
+        "native_save": {"$ref": "#/$defs/persistence"},
+        "save_state": {"$ref": "#/$defs/persistence"}
+      }
+    },
+    "thread_contract": {"$ref": "#/$defs/capability"},
+    "result": {
+      "type": "object",
+      "required": ["status", "failure_count", "violation_count"],
+      "properties": {
+        "status": {"enum": ["passed", "failed", "blocked"]},
+        "failure_count": {"type": "integer", "minimum": 0},
+        "violation_count": {"type": "integer", "minimum": 0}
+      }
+    }
+  },
+  "$defs": {
+    "capability": {
+      "type": "object",
+      "required": ["advertised", "observed", "tested", "passed", "status"],
+      "properties": {
+        "advertised": {"type": "boolean"},
+        "observed": {"type": "boolean"},
+        "tested": {"type": "boolean"},
+        "passed": {"type": "boolean"},
+        "status": {"enum": ["passed", "failed", "not_applicable", "unsupported", "unknown"]},
+        "details": {"type": "string"}
+      }
+    },
+    "persistence": {
+      "type": "object",
+      "required": ["applicable", "status"],
+      "properties": {
+        "applicable": {"type": "boolean"},
+        "status": {"enum": ["passed", "failed", "not_applicable", "blocked"]},
+        "size": {"type": "integer", "minimum": 0},
+        "digest": {"type": "string"},
+        "details": {"type": "string"}
+      }
+    }
+  }
+}

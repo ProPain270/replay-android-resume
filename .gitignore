@@ -1,0 +1,20 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+local.properties
+*.jks
+*.keystore
+*.pem
+*.key
+# Generated output and local evidence
+.gradle/
+.kotlin/
+.cxx/
+**/build/
+node_modules/
+outputs/
+work/
+*.log
+.DS_Store
+.idea/

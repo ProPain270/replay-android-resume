@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <!-- Only present in the test APK. Serves original generated fixtures,
+             never arbitrary paths or user content; all mutation APIs reject. -->
+        <provider
+            android:name="dev.codex.libretroplatform.DiagnosticFixtureProvider"
+            android:authorities="dev.codex.libretroplatform.integration.fixtures"
+            android:exported="true" />
+    </application>
+</manifest>

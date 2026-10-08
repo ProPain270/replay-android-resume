@@ -1,0 +1,13 @@
+Mozilla Public License Version 2.0
+
+The mGBA bundled-core lane uses the Mozilla Public License, version 2.0, as
+provided by the pinned upstream source archive recorded in
+`mGBA-BUNDLED-PROVENANCE.md`. The complete, unmodified license text is
+preserved in `mGBA-MPL-2.0.txt`.
+
+The upstream source also includes this text at `LICENSE`. The canonical public
+license URL is:
+
+https://www.mozilla.org/MPL/2.0/
+
+This notice is kept with the product's source-offer and provenance record.

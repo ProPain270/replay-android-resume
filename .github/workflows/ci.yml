@@ -1,0 +1,15 @@
+name: Native contract tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  native:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        module: [native, corelab]
+    steps:
+      - uses: actions/checkout@v4
+      - run: cmake -S ${{ matrix.module }} -B build/${{ matrix.module }}
+      - run: cmake --build build/${{ matrix.module }} --parallel
+      - run: ctest --test-dir build/${{ matrix.module }} --output-on-failure

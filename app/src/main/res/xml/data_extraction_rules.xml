@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <!-- Cloud backup is limited to recoverable metadata, preferences, and saves.
+         Game binaries can be large and remain user-owned source material. -->
+    <cloud-backup disableIfNoEncryptionCapabilities="true">
+        <include domain="file" path="library" />
+        <include domain="file" path="saves" />
+        <include domain="file" path="save-states" />
+        <include domain="file" path="save-state-thumbnails" />
+        <include domain="file" path="artwork" />
+        <include domain="sharedpref" path="presentation-preferences.xml" />
+    </cloud-backup>
+    <!-- Device-to-device migration can carry the same small recovery set. -->
+    <device-transfer>
+        <include domain="file" path="library" />
+        <include domain="file" path="saves" />
+        <include domain="file" path="save-states" />
+        <include domain="file" path="save-state-thumbnails" />
+        <include domain="file" path="artwork" />
+        <include domain="sharedpref" path="presentation-preferences.xml" />
+    </device-transfer>
+</data-extraction-rules>

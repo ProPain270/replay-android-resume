@@ -1,0 +1,9 @@
+# Original diagnostic program from work/make_visible_gb.py + work/make_battery_gb.py.
+# Sparse 32 KiB image: offset followed by hexadecimal bytes. Unspecified bytes are
+# zero; the loader calculates the standard header/global checksums after assembly.
+# No commercial game data. Draws alternating 8-pixel-wide vertical gray stripes.
+0100 00 C3 50 01
+0104 CE ED 66 66 CC 0D 00 0B 03 73 00 83 00 0C 00 0D 00 08 11 1F 88 89 00 0E DC CC 6E E6 DD DD D9 99 BB BB 67 63 6E 0E EC CC DD DC 99 9F BB B9 33 3E
+0134 43 4F 44 45 58 20 56 49 53 49 42 4C 45 20 20 00
+0147 03 00 02
+0150 F3 3E 00 E0 40 3E E4 E0 47 21 00 80 06 08 3E FF 22 AF 22 3E FF 05 20 F8 06 08 3E 00 22 3E FF 22 AF 05 20 F8 21 00 98 06 20 0E 20 3E 00 22 EE 01 0D 20 FA 05 20 F3 3E 91 E0 40 18 FE

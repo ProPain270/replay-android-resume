@@ -1,0 +1,12 @@
+Snes9x - Portable Super Nintendo Entertainment System (TM) emulator.
+
+This repository records the complete upstream license at the exact source
+commit used by the build recipe:
+
+https://raw.githubusercontent.com/libretro/snes9x/890b5d445538fe790aa3add3d5702c80f551e0ae/LICENSE
+
+The upstream license grants copying, modification, and distribution for
+non-commercial purposes, subject to its copyright, notice, and disclaimer
+terms. The upstream text also identifies separately licensed components;
+their notices remain in the pinned source archive and are listed in
+Snes9x-BUNDLED-PROVENANCE.md.

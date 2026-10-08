@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.LibretroPlatform" parent="android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">#0B0D12</item>
+        <item name="android:navigationBarColor">#0B0D12</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>
